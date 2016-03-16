@@ -1,0 +1,22 @@
+﻿@model FizzBuzz.Models.FizzBuzzer
+@{
+    ViewBag.Title = "FizzBuzz";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<div class="jumbotron">
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <h2>@Html.Label(Model.Maximo.ToString())</h2>
+        </div>
+        <div class="row form-inline">
+            <label for="Nombre" style="padding: 50px 0px 0px">Introduce el máximo: </label>
+            @Html.TextBoxFor(maximo => maximo.Maximo, new { Class = "form-control" })
+        </div>
+        <div class="row">
+            <input type="submit" name="submit" class="form-control" value="FizzBuzzea!" />
+        </div>
+        <p>@Html.Label(Model.FizzBuzzeame(Model.Maximo).ToString())</p>
+    }
+</div>
